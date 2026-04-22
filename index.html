@@ -186,13 +186,23 @@
   }
 
   /* HERO */
-  .hero{padding:160px 0 80px;}
+  .hero{padding:160px 0 80px;--hero-burn:0;}
   .hero-inner{
     display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end;
     position:relative;
     min-height:860px;
   }
   .hero-copy{position:relative;z-index:4;}
+  .hero .burn-item{
+    will-change:transform, opacity, filter;
+    transition:transform .22s ease-out, opacity .22s ease-out, filter .22s ease-out;
+    transform:translate3d(0, calc(var(--hero-burn) * -130px), 0) scale(calc(1 - (var(--hero-burn) * .04)));
+    opacity:calc(1 - (var(--hero-burn) * .92));
+    filter:blur(calc(var(--hero-burn) * 7px)) saturate(calc(1 - (var(--hero-burn) * .25)));
+  }
+  .hero.hero-rebuild .burn-item{
+    animation:rebuildSnap .42s cubic-bezier(.18,.78,.28,1) 1;
+  }
   .hero-face-fx{
     position:absolute;
     right:-5vw;
@@ -205,38 +215,12 @@
     filter:drop-shadow(0 24px 70px rgba(0,0,0,.55));
   }
   .hero-face-fx .img,
-  .hero-face-fx .layer{
+  .hero-visual .portrait{
     position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;
   }
   .hero-face-fx .img{
     filter:contrast(1.1) saturate(1.04) brightness(.9);
-    mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.22) 34%, rgba(0,0,0,.75) 45%, #000 58%, #000 100%);
-  }
-  .hero-face-fx .layer{
-    opacity:.72;
-    mix-blend-mode:lighten;
-    transform-origin:72% 50%;
-    mask-image:linear-gradient(90deg, #000 0%, #000 38%, rgba(0,0,0,.55) 52%, transparent 72%);
-  }
-  .hero-face-fx .layer.l1{
-    filter:blur(1.2px) contrast(1.25) saturate(1.2) brightness(1.03);
-    animation:faceDisintegrateA 4.8s infinite ease-in-out;
-  }
-  .hero-face-fx .layer.l2{
-    opacity:.55;
-    filter:blur(2.8px) contrast(1.3) saturate(1.35) brightness(1.05);
-    animation:faceDisintegrateB 5.8s infinite ease-in-out;
-  }
-  .hero-face-fx .fracture{
-    position:absolute;inset:0;
-    background:
-      repeating-linear-gradient(170deg, rgba(212,255,58,.24) 0 1px, transparent 1px 10px),
-      radial-gradient(circle at 42% 32%, rgba(212,255,58,.24), transparent 42%);
-    mix-blend-mode:screen;
-    opacity:.22;
-    mask-image:linear-gradient(90deg, #000 18%, rgba(0,0,0,.6) 46%, transparent 72%);
-    animation:fracturePulse 3.8s infinite ease-in-out;
-    z-index:3;
+    mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.32) 30%, rgba(0,0,0,.82) 44%, #000 58%, #000 100%);
   }
   .hero-face-fx::before{
     content:"";
@@ -244,50 +228,73 @@
     background:
       linear-gradient(90deg, rgba(10,10,10,.9) 0%, rgba(10,10,10,.58) 22%, rgba(10,10,10,.18) 40%, rgba(10,10,10,.04) 58%, transparent 78%),
       radial-gradient(560px 340px at 64% 12%, rgba(212,255,58,.18), transparent 70%);
-    z-index:4;
+    z-index:2;
   }
-  .hero-face-fx::after{
+  .hero-dust{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:6;
+    opacity:calc(var(--hero-burn) * 1.1);
+    transition:opacity .2s ease-out;
+  }
+  .hero-dust::before{
     content:"";
     position:absolute;inset:0;
     background:
-      radial-gradient(circle at 20% 22%, rgba(212,255,58,.95) 0 1.5px, transparent 2px),
-      radial-gradient(circle at 24% 38%, rgba(212,255,58,.8) 0 1.2px, transparent 2px),
-      radial-gradient(circle at 30% 44%, rgba(212,255,58,.85) 0 1.1px, transparent 2px),
-      radial-gradient(circle at 18% 56%, rgba(212,255,58,.7) 0 1.3px, transparent 2px),
-      radial-gradient(circle at 28% 64%, rgba(212,255,58,.78) 0 1px, transparent 2px),
-      radial-gradient(circle at 38% 72%, rgba(212,255,58,.72) 0 1.1px, transparent 2px),
-      radial-gradient(circle at 34% 30%, rgba(212,255,58,.65) 0 .9px, transparent 2px);
-    opacity:.34;
-    transform:translateX(0);
-    animation:ashFloat 4.4s infinite ease-out;
-    mask-image:linear-gradient(90deg, #000 8%, #000 54%, transparent 82%);
-    z-index:5;
+      radial-gradient(circle at 16% 74%, rgba(212,255,58,.95) 0 1.6px, transparent 2px),
+      radial-gradient(circle at 26% 66%, rgba(212,255,58,.8) 0 1.3px, transparent 2px),
+      radial-gradient(circle at 42% 76%, rgba(212,255,58,.84) 0 1.2px, transparent 2px),
+      radial-gradient(circle at 55% 70%, rgba(212,255,58,.72) 0 1px, transparent 2px),
+      radial-gradient(circle at 68% 72%, rgba(212,255,58,.86) 0 1.3px, transparent 2px),
+      radial-gradient(circle at 78% 76%, rgba(212,255,58,.78) 0 1.2px, transparent 2px),
+      radial-gradient(circle at 88% 70%, rgba(212,255,58,.68) 0 1px, transparent 2px);
+    transform:translate3d(0, calc(var(--hero-burn) * -180px), 0) scale(calc(1 + (var(--hero-burn) * .18)));
+    filter:blur(calc(var(--hero-burn) * .6px));
+    animation:ashRiseA 3.8s infinite linear;
+    mask-image:linear-gradient(180deg, transparent 0%, rgba(0,0,0,.55) 36%, #000 56%, transparent 100%);
   }
-  @keyframes faceDisintegrateA{
-    0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.62;clip-path:inset(0 0 0 0);}
-    18%{transform:translate3d(-8px,-3px,0) scale(1.01);clip-path:inset(8% 0 62% 0);}
-    19%{transform:translate3d(-18px,2px,0) scale(1.015);clip-path:inset(34% 0 34% 0);}
-    44%{transform:translate3d(-2px,0,0) scale(1.005);clip-path:inset(0 0 0 0);}
-    63%{transform:translate3d(-12px,-1px,0) scale(1.01);clip-path:inset(58% 0 16% 0);}
-    64%{transform:translate3d(-24px,1px,0) scale(1.02);clip-path:inset(20% 0 46% 0);}
+  .hero-dust::after{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 10% 80%, rgba(212,255,58,.26), transparent 32%),
+      radial-gradient(circle at 32% 78%, rgba(212,255,58,.22), transparent 28%),
+      radial-gradient(circle at 54% 82%, rgba(212,255,58,.18), transparent 26%),
+      radial-gradient(circle at 78% 78%, rgba(212,255,58,.2), transparent 30%);
+    transform:translate3d(0, calc(var(--hero-burn) * -130px), 0);
+    filter:blur(calc(var(--hero-burn) * 3px));
+    animation:ashRiseB 5.6s infinite ease-out;
+    mask-image:linear-gradient(180deg, transparent 4%, rgba(0,0,0,.7) 34%, #000 58%, transparent 100%);
   }
-  @keyframes faceDisintegrateB{
-    0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.46;}
-    15%{transform:translate3d(-16px,-2px,0) scale(1.01);opacity:.64;}
-    37%{transform:translate3d(-26px,2px,0) scale(1.03);opacity:.36;}
-    54%{transform:translate3d(-10px,0,0) scale(1.008);opacity:.52;}
-    72%{transform:translate3d(-24px,-1px,0) scale(1.02);opacity:.4;}
+  .hero.hero-rebuild .hero-dust::before{
+    animation:ashRebuildA .62s ease-out 1;
+    opacity:.9;
   }
-  @keyframes fracturePulse{
-    0%,100%{opacity:.16;transform:translateX(0);}
-    35%{opacity:.3;transform:translateX(-6px);}
-    65%{opacity:.22;transform:translateX(-10px);}
+  .hero.hero-rebuild .hero-dust::after{
+    animation:ashRebuildB .75s ease-out 1;
+    opacity:.7;
   }
-  @keyframes ashFloat{
-    0%{transform:translate3d(0,0,0) scale(1);opacity:.16;}
-    20%{transform:translate3d(-12px,-8px,0) scale(1.03);opacity:.42;}
-    55%{transform:translate3d(-36px,-20px,0) scale(1.06);opacity:.28;}
-    100%{transform:translate3d(-52px,-32px,0) scale(1.12);opacity:0;}
+  @keyframes rebuildSnap{
+    0%{filter:blur(4px) saturate(.85) brightness(.96);}
+    35%{filter:blur(1.6px) saturate(1.06) brightness(1.04);}
+    100%{filter:blur(0) saturate(1) brightness(1);}
+  }
+  @keyframes ashRiseA{
+    0%{background-position:0 0,0 0,0 0,0 0,0 0,0 0,0 0;}
+    100%{background-position:-18px -120px,-12px -100px,-26px -136px,-16px -110px,-22px -128px,-10px -118px,-20px -132px;}
+  }
+  @keyframes ashRiseB{
+    0%{transform:translate3d(0,0,0);}
+    100%{transform:translate3d(0,-130px,0);}
+  }
+  @keyframes ashRebuildA{
+    0%{transform:translate3d(-32px,-82px,0) scale(1.12);opacity:.55;}
+    100%{transform:translate3d(0,-18px,0) scale(1);opacity:.08;}
+  }
+  @keyframes ashRebuildB{
+    0%{transform:translate3d(-18px,-64px,0);opacity:.5;}
+    100%{transform:translate3d(0,-8px,0);opacity:.06;}
   }
   .hero h1 .line{display:block;}
   .hero h1 .accent-word{
@@ -352,7 +359,9 @@
   @media(max-width:900px){
     .hero-inner{grid-template-columns:1fr;gap:40px;}
     .hero-copy{z-index:2;}
+    .hero .burn-item{transform:none;opacity:1;filter:none;}
     .hero-face-fx{display:none;}
+    .hero-dust{display:none;}
     .hero-visual{display:block;aspect-ratio:4/3;}
   }
 
@@ -836,13 +845,10 @@
 <section class="hero">
   <div class="wrap">
     <div class="hero-inner">
-      <div class="hero-face-fx" aria-hidden="true">
+      <div class="hero-face-fx burn-item" aria-hidden="true">
         <img src="assets/pascal-hero.png" alt="" class="img" loading="eager" decoding="async" />
-        <img src="assets/pascal-hero.png" alt="" class="layer l1" loading="eager" decoding="async" />
-        <img src="assets/pascal-hero.png" alt="" class="layer l2" loading="eager" decoding="async" />
-        <span class="fracture"></span>
       </div>
-      <div class="hero-copy">
+      <div class="hero-copy burn-item">
         <div class="hero-badge reveal">
           <span class="dot"></span>
           <span data-translate="fr">Founder · Investor · Operator — Suisse</span>
@@ -922,6 +928,7 @@
           <span>v.2026</span>
         </div>
       </div>
+      <div class="hero-dust" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -1475,6 +1482,41 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // HERO VOLCANIC DUST ON SCROLL (desktop only)
+  const heroSection = document.querySelector('.hero');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileQuery = window.matchMedia('(max-width: 900px)');
+  let lastBurn = 0;
+  let rebuildTimer = null;
+
+  function updateHeroBurn(){
+    if (!heroSection) return;
+    if (reduceMotion.matches || mobileQuery.matches) {
+      heroSection.style.setProperty('--hero-burn', '0');
+      heroSection.classList.remove('hero-rebuild');
+      lastBurn = 0;
+      return;
+    }
+    const rect = heroSection.getBoundingClientRect();
+    const travel = Math.max(420, rect.height * 0.72);
+    const raw = (-rect.top + window.innerHeight * 0.08) / travel;
+    const burn = Math.min(1, Math.max(0, raw));
+    heroSection.style.setProperty('--hero-burn', burn.toFixed(3));
+
+    // Trigger a short reverse-wave burst while rebuilding on scroll-up.
+    const delta = burn - lastBurn;
+    if (delta < -0.015 && burn < 0.88) {
+      heroSection.classList.add('hero-rebuild');
+      clearTimeout(rebuildTimer);
+      rebuildTimer = setTimeout(() => heroSection.classList.remove('hero-rebuild'), 320);
+    }
+    lastBurn = burn;
+  }
+
+  updateHeroBurn();
+  window.addEventListener('scroll', updateHeroBurn, { passive: true });
+  window.addEventListener('resize', updateHeroBurn);
 
   // COUNTERS
   const counters = document.querySelectorAll('[data-counter]');
