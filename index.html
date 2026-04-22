@@ -193,21 +193,24 @@
       linear-gradient(180deg,#0F1114,#1B1F26);
     overflow:hidden;
   }
+  .hero-visual .portrait{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 24%;
+    filter:contrast(1.06) saturate(1.02) brightness(.93);
+    transform:scale(1.03);
+  }
+  .hero-visual::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,.08) 0%, rgba(10,10,10,.18) 58%, rgba(10,10,10,.38) 100%),
+      radial-gradient(500px 240px at 60% 8%, rgba(212,255,58,.10), transparent 72%);
+    mix-blend-mode:normal;
+  }
   .hero-visual::before{
     content:"";position:absolute;inset:0;
     background-image:
       linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
     background-size:32px 32px;mask-image:linear-gradient(180deg,black 0%,transparent 80%);
-  }
-  .hero-visual .portrait-placeholder{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--muted-2);
-    font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  }
-  .hero-visual .portrait-placeholder .circle{
-    width:180px;height:180px;border-radius:999px;border:1px dashed var(--border);
-    display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:var(--display);font-size:64px;font-weight:700;letter-spacing:-.04em;
-    background:radial-gradient(120px 120px at 50% 30%, rgba(212,255,58,.10), transparent 60%);
   }
   .hero-visual .corners span{position:absolute;width:18px;height:18px;border:1px solid var(--accent);}
   .hero-visual .corners .tl{top:16px;left:16px;border-right:0;border-bottom:0;}
@@ -312,6 +315,11 @@
       linear-gradient(180deg,#14171C,#0F1114);
     position:relative;overflow:hidden;
   }
+  .about-visual .portrait{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%;
+    filter:contrast(1.05) saturate(1.03) brightness(.9);
+    transform:scale(1.04);
+  }
   .about-visual::before{
     content:"";position:absolute;inset:0;
     background-image:
@@ -319,10 +327,11 @@
       linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
     background-size:40px 40px;
   }
-  .about-visual .sig{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-family:var(--script);font-size:160px;color:var(--accent);font-weight:400;
-    text-shadow:0 0 60px rgba(212,255,58,.3);line-height:1;
+  .about-visual::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,.05) 0%, rgba(10,10,10,.16) 58%, rgba(10,10,10,.34) 100%),
+      radial-gradient(380px 180px at 72% 10%, rgba(125,249,255,.12), transparent 72%);
   }
   .about h2{margin-bottom:22px;}
   .about .lead{margin-bottom:22px;}
@@ -496,7 +505,6 @@
 
     /* Hero visual (portrait block) */
     .hero-visual{aspect-ratio:5/4;border-radius:16px;}
-    .hero-visual .portrait-placeholder .circle{width:130px;height:130px;font-size:48px;}
     .hero-visual .ticker{font-size:9px;}
 
     /* Marquee */
@@ -521,7 +529,6 @@
     /* About */
     .about{gap:32px;}
     .about-visual{border-radius:16px;aspect-ratio:5/3;}
-    .about-visual .sig{font-size:clamp(72px,18vw,118px);text-shadow:0 0 30px rgba(212,255,58,.25);}
     /* Stack about-grid as horizontal rows on mobile */
     .about-grid{grid-template-columns:1fr;gap:10px;margin-top:28px;}
     .about-grid div{
@@ -575,7 +582,6 @@
     .hero-stats .stat{padding:16px;}
 
     .hero-visual{aspect-ratio:4/3;}
-    .hero-visual .portrait-placeholder .circle{width:110px;height:110px;font-size:40px;}
     .hero-visual .ticker{padding:0 12px;font-size:8px;letter-spacing:.1em;}
     .hero-visual .corners span{width:14px;height:14px;}
 
@@ -583,7 +589,6 @@
     .result .big .unit{font-size:.5em;}
 
     .about-visual{aspect-ratio:16/9;}
-    .about-visual .sig{font-size:clamp(60px,16vw,96px);}
 
     /* Footer tighter on small mobile */
     footer{padding:40px 0 20px;margin-top:32px;}
@@ -649,7 +654,7 @@
         <button data-setlang="en">EN</button>
         <button data-setlang="de">DE</button>
       </div>
-      <a href="#contact" class="btn btn-primary nav-cta">
+      <a href="https://cal.eu/schwarz-signature-sarl/30min" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer">
         <span data-translate="fr">Réserver un call</span>
         <span data-translate="en">Book a call</span>
         <span data-translate="de">Termin buchen</span>
@@ -665,7 +670,7 @@
   <a href="#results"><span data-translate="fr">Résultats</span><span data-translate="en">Results</span><span data-translate="de">Ergebnisse</span></a>
   <a href="#about"><span data-translate="fr">À propos</span><span data-translate="en">About</span><span data-translate="de">Über</span></a>
   <a href="#faq">FAQ</a>
-  <a href="#contact" class="btn btn-primary" style="width:fit-content;">
+  <a href="https://cal.eu/schwarz-signature-sarl/30min" class="btn btn-primary" style="width:fit-content;" target="_blank" rel="noopener noreferrer">
     <span data-translate="fr">Réserver un call</span>
     <span data-translate="en">Book a call</span>
     <span data-translate="de">Termin buchen</span>
@@ -708,7 +713,7 @@
           <span data-translate="de">Ich habe meine eigenen Unternehmen aus dem Nichts auf über 8M+ Gesamtumsatz in 3 Jahren skaliert. Heute investiere ich in andere Operatoren und begleite Unternehmer, die in derselben Liga spielen wollen: Wholesale, Digitalisierung, Automatisierung, Vertriebsschulung.</span>
         </p>
         <div class="hero-ctas reveal d3">
-          <a href="#contact" class="btn btn-primary">
+          <a href="https://cal.eu/schwarz-signature-sarl/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
             <span data-translate="fr">Réserver un call stratégique</span>
             <span data-translate="en">Book a strategy call</span>
             <span data-translate="de">Strategiegespräch buchen</span>
@@ -756,16 +761,8 @@
         </div>
       </div>
       <div class="hero-visual reveal d2">
+        <img src="assets/pascal-hero.png" alt="Pascal Schwarz portrait" class="portrait" loading="eager" decoding="async" />
         <div class="corners"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
-        <div class="portrait-placeholder">
-          <div class="circle">PS</div>
-          <div>PASCAL SCHWARZ</div>
-          <div style="color:var(--muted)">
-            <span data-translate="fr">[ photo à intégrer ]</span>
-            <span data-translate="en">[ portrait to insert ]</span>
-            <span data-translate="de">[ Porträt einfügen ]</span>
-          </div>
-        </div>
         <div class="ticker">
           <span>LAT 46.9°N</span>
           <span>CH · EU · INTL</span>
@@ -990,7 +987,7 @@
   <div class="wrap">
     <div class="about">
       <div class="about-visual reveal">
-        <div class="sig">Pascal</div>
+        <img src="assets/pascal-about.png" alt="Pascal Schwarz portrait" class="portrait" loading="lazy" decoding="async" />
       </div>
       <div class="reveal d1">
         <div class="eyebrow"><span data-translate="fr">À propos</span><span data-translate="en">About</span><span data-translate="de">Über mich</span></div>
@@ -1218,7 +1215,7 @@
         <span data-translate="de">Sie stellen mir Ihr Unternehmen vor, ich sage Ihnen, was ich sehe, wir entscheiden gemeinsam. Kein Pitch, keine Folien — Operator zu Operator.</span>
       </p>
       <div class="hero-ctas">
-        <a href="mailto:pascal@schwarz-signature.ch" class="btn btn-primary">
+        <a href="https://cal.eu/schwarz-signature-sarl/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
           <span data-translate="fr">Réserver mon call</span>
           <span data-translate="en">Book my call</span>
           <span data-translate="de">Meinen Call buchen</span>
