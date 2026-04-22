@@ -456,11 +456,15 @@
   footer{border-top:1px solid var(--border);padding:60px 0 30px;margin-top:80px;}
   .foot-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-bottom:40px;}
   footer h5{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;}
-  footer ul{display:flex;flex-direction:column;gap:10px;}
+  footer ul{display:flex;flex-direction:column;gap:10px;list-style:none;padding:0;margin:0;}
   footer a{color:var(--text);font-size:14px;transition:color .2s ease;}
   footer a:hover{color:var(--accent);}
   .foot-bottom{border-top:1px solid var(--border-soft);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.12em;}
-  @media(max-width:720px){.foot-top{grid-template-columns:1fr;}}
+  @media(max-width:720px){
+    .foot-top{grid-template-columns:1fr;gap:32px;}
+    .foot-top .logo .mark{font-size:15px;}
+    .foot-top .logo .script{font-size:28px;margin-top:-10px;margin-right:-8px;}
+  }
 
   /* Reveal */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;}
