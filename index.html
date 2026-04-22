@@ -133,9 +133,35 @@
     max-width:1240px;margin:0 auto;padding:16px 28px;
     display:flex;align-items:center;justify-content:space-between;gap:24px;
   }
-  .logo{display:inline-flex;flex-direction:column;align-items:flex-end;line-height:.9;user-select:none;}
-  .logo .mark{font-family:var(--display);font-weight:700;letter-spacing:.28em;font-size:16px;color:var(--text);}
-  .logo .script{font-family:var(--script);font-weight:400;font-size:26px;color:var(--accent);margin-top:-4px;margin-right:-4px;line-height:1;transform:translateY(-1px);}
+  .logo{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:flex-end;
+    line-height:.9;
+    user-select:none;
+    position:relative;
+  }
+  .logo .mark{
+    font-family:var(--display);
+    font-weight:700;
+    letter-spacing:.28em;
+    font-size:16px;
+    color:var(--text);
+    position:relative;
+    z-index:2;
+  }
+  .logo .script{
+    font-family:var(--script);
+    font-weight:400;
+    font-size:56px;
+    color:var(--accent);
+    margin-top:-42px;
+    margin-right:-2px;
+    line-height:1;
+    position:relative;
+    z-index:1;
+    opacity:.9;
+  }
   .nav-links{display:flex;gap:28px;align-items:center;}
   .nav-links a{font-size:14px;color:var(--muted);transition:color .2s ease;font-weight:500;}
   .nav-links a:hover{color:var(--text);}
@@ -529,6 +555,11 @@
     /* About */
     .about{gap:32px;}
     .about-visual{border-radius:16px;aspect-ratio:5/3;}
+    .about-visual .portrait{
+      /* Show more of the subject on mobile */
+      object-position:center 14%;
+      transform:scale(1.01);
+    }
     /* Stack about-grid as horizontal rows on mobile */
     .about-grid{grid-template-columns:1fr;gap:10px;margin-top:28px;}
     .about-grid div{
@@ -588,7 +619,11 @@
     .result .big{font-size:clamp(32px,11vw,44px);}
     .result .big .unit{font-size:.5em;}
 
-    .about-visual{aspect-ratio:16/9;}
+    .about-visual{aspect-ratio:4/3;}
+    .about-visual .portrait{
+      object-position:center 12%;
+      transform:scale(1);
+    }
 
     /* Footer tighter on small mobile */
     footer{padding:40px 0 20px;margin-top:32px;}
@@ -639,7 +674,7 @@
   <div class="nav-inner">
     <a href="#top" class="logo" aria-label="Schwarz Signature">
       <span class="mark">SCHWARZ</span>
-      <span class="script">signature</span>
+      <span class="script">Signature</span>
     </a>
     <nav class="nav-links">
       <a href="#services"><span data-translate="fr">Services</span><span data-translate="en">Services</span><span data-translate="de">Leistungen</span></a>
@@ -1238,7 +1273,7 @@
       <div>
         <a href="#top" class="logo" style="margin-bottom:16px;">
           <span class="mark">SCHWARZ</span>
-          <span class="script">signature</span>
+          <span class="script">Signature</span>
         </a>
         <p style="color:var(--muted);max-width:40ch;font-size:14px;margin-top:12px;">
           <span data-translate="fr">Operator &amp; growth architect. Je transforme les PME en machines de croissance.</span>
