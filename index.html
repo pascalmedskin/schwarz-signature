@@ -187,7 +187,81 @@
 
   /* HERO */
   .hero{padding:160px 0 80px;}
-  .hero-inner{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end;}
+  .hero-inner{
+    display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end;
+    position:relative;
+    min-height:860px;
+  }
+  .hero-copy{position:relative;z-index:4;}
+  .hero-face-fx{
+    position:absolute;
+    right:-5vw;
+    top:8px;
+    width:min(55vw,820px);
+    height:min(88vh,980px);
+    pointer-events:none;
+    z-index:1;
+    overflow:hidden;
+    filter:drop-shadow(0 24px 70px rgba(0,0,0,.55));
+  }
+  .hero-face-fx .img,
+  .hero-face-fx .layer{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;
+  }
+  .hero-face-fx .img{
+    filter:contrast(1.08) saturate(1.04) brightness(.9);
+    mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.5) 20%, #000 36%, #000 100%);
+  }
+  .hero-face-fx .layer{
+    opacity:.2;
+    mix-blend-mode:screen;
+    filter:blur(.3px) contrast(1.2);
+    animation:faceGlitch 5.2s infinite ease-in-out;
+    mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.9) 25%, #000 40%, #000 100%);
+  }
+  .hero-face-fx .layer.l2{
+    opacity:.15;
+    mix-blend-mode:lighten;
+    animation-duration:6.6s;
+    animation-direction:reverse;
+  }
+  .hero-face-fx::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      linear-gradient(90deg, rgba(10,10,10,.95) 0%, rgba(10,10,10,.45) 24%, rgba(10,10,10,.1) 42%, rgba(10,10,10,.04) 60%, transparent 78%),
+      radial-gradient(560px 340px at 64% 12%, rgba(212,255,58,.18), transparent 70%);
+    z-index:2;
+  }
+  .hero-face-fx::after{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        rgba(212,255,58,.09) 0 1px,
+        transparent 1px 11px
+      );
+    opacity:.18;
+    transform:translateX(-2%);
+    animation:scanDrift 8s infinite linear;
+    mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.85) 27%, rgba(0,0,0,.2) 50%, transparent 72%);
+    z-index:3;
+  }
+  @keyframes faceGlitch{
+    0%,100%{transform:translate(0,0);clip-path:inset(0 0 0 0);}
+    20%{transform:translate(5px,-2px);clip-path:inset(6% 0 68% 0);}
+    21%{transform:translate(-4px,1px);clip-path:inset(42% 0 26% 0);}
+    47%{transform:translate(0,0);clip-path:inset(0 0 0 0);}
+    58%{transform:translate(6px,0);clip-path:inset(61% 0 14% 0);}
+    59%{transform:translate(-3px,-1px);clip-path:inset(16% 0 55% 0);}
+    82%{transform:translate(0,0);clip-path:inset(0 0 0 0);}
+  }
+  @keyframes scanDrift{
+    0%{transform:translateX(-2%);}
+    50%{transform:translateX(2%);}
+    100%{transform:translateX(-2%);}
+  }
   .hero h1 .line{display:block;}
   .hero h1 .accent-word{
     background:linear-gradient(120deg,#D4FF3A 0%, #7DF9FF 100%);
@@ -219,6 +293,7 @@
       linear-gradient(180deg,#0F1114,#1B1F26);
     overflow:hidden;
   }
+  .hero-visual{display:none;}
   .hero-visual .portrait{
     position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 24%;
     filter:contrast(1.06) saturate(1.02) brightness(.93);
@@ -249,7 +324,9 @@
   }
   @media(max-width:900px){
     .hero-inner{grid-template-columns:1fr;gap:40px;}
-    .hero-visual{aspect-ratio:4/3;}
+    .hero-copy{z-index:2;}
+    .hero-face-fx{display:none;}
+    .hero-visual{display:block;aspect-ratio:4/3;}
   }
 
   /* MARQUEE */
@@ -650,6 +727,14 @@
     .stat .v{font-size:22px;}
   }
 
+  /* Wider desktops: align visual to screen edge for cinematic hero */
+  @media (min-width: 1280px){
+    .hero-face-fx{
+      right:calc((1240px - 100vw) / 2 - 24px);
+      width:min(58vw,900px);
+    }
+  }
+
   /* Mobile menu polish */
   @media (max-width: 900px){
     .mobile-menu{padding:32px 20px 60px;gap:16px;overflow-y:auto;}
@@ -724,7 +809,12 @@
 <section class="hero">
   <div class="wrap">
     <div class="hero-inner">
-      <div>
+      <div class="hero-face-fx" aria-hidden="true">
+        <img src="assets/pascal-hero.png" alt="" class="img" loading="eager" decoding="async" />
+        <img src="assets/pascal-hero.png" alt="" class="layer l1" loading="eager" decoding="async" />
+        <img src="assets/pascal-hero.png" alt="" class="layer l2" loading="eager" decoding="async" />
+      </div>
+      <div class="hero-copy">
         <div class="hero-badge reveal">
           <span class="dot"></span>
           <span data-translate="fr">Founder · Investor · Operator — Suisse</span>
