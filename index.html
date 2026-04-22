@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Schwarz Signature — Pascal Schwarz · Founder, Investor, Operator</title>
+<meta name="description" content="Parti de zéro. 8M+ CHF générés en 3 ans. Je déploie les mêmes systèmes chez les dirigeants de PME : wholesale, digitalisation, automatisation, formation commerciale." />
+<meta name="author" content="Pascal Schwarz" />
+<meta name="theme-color" content="#0A0A0A" />
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="favicon.svg" />
+
+<!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Schwarz Signature" />
+<meta property="og:title" content="Pascal Schwarz — Founder, Investor, Operator" />
+<meta property="og:description" content="Parti de zéro. 8M+ CHF en 3 ans. Les mêmes systèmes, dans votre business. Wholesale · Digital · Automation · Sales Training." />
+<meta property="og:url" content="https://www.schwarz-signature.ch/" />
+<meta property="og:locale" content="fr_CH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="de_CH" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Pascal Schwarz — Schwarz Signature" />
+<meta name="twitter:description" content="Parti de zéro. 8M+ CHF en 3 ans. Les mêmes systèmes, dans votre business." />
+
+<link rel="canonical" href="https://www.schwarz-signature.ch/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Allison&family=Great+Vibes&family=Monsieur+La+Doulaise&family=Pinyon+Script&family=Herr+Von+Muellerhoff&family=Sacramento&family=Alex+Brush&family=Dancing+Script:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0A0A0A;
+    --bg-2:#0F1114;
+    --surface:#14171C;
+    --surface-2:#1B1F26;
+    --border:#272B33;
+    --border-soft:#1E2229;
+    --text:#E7E9EE;
+    --muted:#8B93A1;
+    --muted-2:#5E6675;
+    --accent:#D4FF3A;
+    --accent-dim:rgba(212,255,58,.12);
+    --accent-2:#7DF9FF;
+    --danger:#FF5C5C;
+    --grad-1: radial-gradient(1200px 600px at 10% -10%, rgba(212,255,58,.10), transparent 60%),
+              radial-gradient(900px 600px at 90% 0%, rgba(125,249,255,.08), transparent 60%);
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --display: 'Space Grotesk', ui-sans-serif, sans-serif;
+    --body: 'Inter', ui-sans-serif, sans-serif;
+    --script: 'Allison', cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:var(--grad-1);
+    background-attachment:fixed;
+  }
+  /* subtle grid background */
+  body::before{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+  /* noise */
+  body::after{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.035;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/></svg>");
+  }
+
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+  /* Layout */
+  .wrap{max-width:1240px;margin:0 auto;padding:0 28px;position:relative;z-index:2;}
+  section{position:relative;z-index:2;padding:120px 0;}
+  @media(max-width:720px){ section{padding:80px 0;} .wrap{padding:0 20px;} }
+
+  /* Typography */
+  h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.01em;line-height:1.05;font-weight:600;}
+  h1{font-size:clamp(40px,7vw,88px);font-weight:700;letter-spacing:-.03em;}
+  h2{font-size:clamp(32px,4.5vw,56px);letter-spacing:-.02em;}
+  h3{font-size:clamp(22px,2vw,28px);}
+  .eyebrow{
+    font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--accent);display:inline-block;}
+  .lead{color:var(--muted);font-size:clamp(16px,1.3vw,19px);max-width:62ch;}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;
+    font-weight:500;font-size:15px;transition:all .25s ease;border:1px solid transparent;white-space:nowrap;
+  }
+  .btn-primary{background:var(--accent);color:#0A0A0A;}
+  .btn-primary:hover{background:#C0F02A;transform:translateY(-1px);box-shadow:0 10px 40px -10px rgba(212,255,58,.5);}
+  .btn-ghost{background:transparent;border-color:var(--border);color:var(--text);}
+  .btn-ghost:hover{background:var(--surface);border-color:#3a3f48;}
+  .btn .arrow{transition:transform .25s ease;}
+  .btn:hover .arrow{transform:translateX(4px);}
+
+  /* NAV */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter:blur(16px) saturate(140%);
+    -webkit-backdrop-filter:blur(16px) saturate(140%);
+    background:rgba(10,10,10,.55);
+    border-bottom:1px solid rgba(255,255,255,.04);
+  }
+  .nav-inner{
+    max-width:1240px;margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .logo{display:inline-flex;flex-direction:column;align-items:flex-end;line-height:.9;user-select:none;}
+  .logo .mark{font-family:var(--display);font-weight:700;letter-spacing:.28em;font-size:16px;color:var(--text);}
+  .logo .script{font-family:var(--script);font-weight:400;font-size:26px;color:var(--accent);margin-top:-4px;margin-right:-4px;line-height:1;transform:translateY(-1px);}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{font-size:14px;color:var(--muted);transition:color .2s ease;font-weight:500;}
+  .nav-links a:hover{color:var(--text);}
+  .lang{
+    display:flex;align-items:center;gap:2px;background:var(--surface);border:1px solid var(--border);
+    border-radius:999px;padding:3px;
+  }
+  .lang button{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;padding:6px 10px;border-radius:999px;
+    color:var(--muted-2);transition:all .2s ease;
+  }
+  .lang button.active{background:var(--text);color:#0A0A0A;}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .burger{display:none;width:40px;height:40px;border:1px solid var(--border);border-radius:999px;align-items:center;justify-content:center;}
+  .burger span{width:14px;height:1.5px;background:var(--text);position:relative;}
+  .burger span::before,.burger span::after{content:"";position:absolute;width:14px;height:1.5px;background:var(--text);left:0;}
+  .burger span::before{top:-5px;}.burger span::after{top:5px;}
+  @media(max-width:900px){
+    .nav-links{display:none;}
+    .burger{display:inline-flex;}
+    .nav-cta{display:none;}
+  }
+
+  /* HERO */
+  .hero{padding:160px 0 80px;}
+  .hero-inner{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end;}
+  .hero h1 .line{display:block;}
+  .hero h1 .accent-word{
+    background:linear-gradient(120deg,#D4FF3A 0%, #7DF9FF 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero h1 .script{font-family:var(--script);font-weight:400;color:var(--accent);font-size:1.1em;letter-spacing:0;}
+  .hero .lead{margin-top:28px;font-size:clamp(17px,1.4vw,20px);}
+  .hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
+  .hero-stats{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border-soft);
+    border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:48px;
+  }
+  .hero-stats .stat{background:var(--bg-2);padding:22px 20px;}
+  .stat .v{font-family:var(--display);font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.02em;}
+  .stat .l{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-top:4px;}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:10px;padding:8px 14px;
+    border:1px solid var(--border);border-radius:999px;background:var(--surface);
+    font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;
+    margin-bottom:28px;
+  }
+  .hero-badge .dot{width:6px;height:6px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(212,255,58,.15);animation:pulse 2.5s infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  .hero-visual{
+    position:relative;aspect-ratio:4/5;border-radius:20px;border:1px solid var(--border);
+    background:
+      radial-gradient(800px 400px at 50% -50%, rgba(212,255,58,.18), transparent 60%),
+      linear-gradient(180deg,#0F1114,#1B1F26);
+    overflow:hidden;
+  }
+  .hero-visual::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:32px 32px;mask-image:linear-gradient(180deg,black 0%,transparent 80%);
+  }
+  .hero-visual .portrait-placeholder{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--muted-2);
+    font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  }
+  .hero-visual .portrait-placeholder .circle{
+    width:180px;height:180px;border-radius:999px;border:1px dashed var(--border);
+    display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:var(--display);font-size:64px;font-weight:700;letter-spacing:-.04em;
+    background:radial-gradient(120px 120px at 50% 30%, rgba(212,255,58,.10), transparent 60%);
+  }
+  .hero-visual .corners span{position:absolute;width:18px;height:18px;border:1px solid var(--accent);}
+  .hero-visual .corners .tl{top:16px;left:16px;border-right:0;border-bottom:0;}
+  .hero-visual .corners .tr{top:16px;right:16px;border-left:0;border-bottom:0;}
+  .hero-visual .corners .bl{bottom:16px;left:16px;border-right:0;border-top:0;}
+  .hero-visual .corners .br{bottom:16px;right:16px;border-left:0;border-top:0;}
+  .hero-visual .ticker{
+    position:absolute;bottom:16px;left:16px;right:16px;
+    display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.15em;
+  }
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:40px;}
+    .hero-visual{aspect-ratio:4/3;}
+  }
+
+  /* MARQUEE */
+  .marquee{
+    border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);
+    padding:22px 0;overflow:hidden;background:rgba(10,10,10,.5);
+  }
+  .marquee-track{display:flex;gap:64px;white-space:nowrap;animation:slide 35s linear infinite;}
+  .marquee-track span{
+    font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:64px;
+  }
+  .marquee-track span::after{content:"◆";color:var(--accent);}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* Section headings */
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:64px;flex-wrap:wrap;}
+  .sec-head h2{max-width:18ch;}
+  .sec-head .lead{max-width:44ch;}
+
+  /* PILLARS */
+  .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .pillar{
+    background:linear-gradient(180deg,var(--surface) 0%, var(--bg-2) 100%);
+    border:1px solid var(--border);border-radius:20px;padding:36px;
+    position:relative;overflow:hidden;transition:all .35s ease;
+  }
+  .pillar::before{
+    content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+    background:linear-gradient(135deg,rgba(212,255,58,.0) 0%, rgba(212,255,58,.0) 45%, rgba(212,255,58,.6) 55%, rgba(212,255,58,0) 65%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;
+    opacity:0;transition:opacity .4s ease;
+  }
+  .pillar:hover{transform:translateY(-4px);border-color:#3a3f48;}
+  .pillar:hover::before{opacity:1;}
+  .pillar .num{
+    font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.2em;
+    display:flex;align-items:center;gap:12px;margin-bottom:28px;
+  }
+  .pillar .num::after{content:"";flex:1;height:1px;background:var(--border);}
+  .pillar h3{margin-bottom:14px;}
+  .pillar p{color:var(--muted);font-size:15px;max-width:40ch;}
+  .pillar ul{margin-top:22px;display:flex;flex-direction:column;gap:10px;}
+  .pillar ul li{
+    font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:flex-start;
+  }
+  .pillar ul li::before{content:"→";color:var(--accent);font-family:var(--mono);}
+  @media(max-width:820px){ .pillars{grid-template-columns:1fr;} .pillar{padding:28px;} }
+
+  /* APPROACH (steps) */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+  .step{padding:32px;border-right:1px solid var(--border);background:var(--bg-2);position:relative;}
+  .step:last-child{border-right:0;}
+  .step .n{
+    font-family:var(--display);font-size:44px;font-weight:700;color:var(--accent);letter-spacing:-.03em;
+    display:flex;align-items:baseline;gap:8px;margin-bottom:20px;
+  }
+  .step .n small{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.2em;}
+  .step h4{font-size:17px;font-weight:600;margin-bottom:8px;}
+  .step p{color:var(--muted);font-size:14px;}
+  @media(max-width:900px){
+    .steps{grid-template-columns:1fr 1fr;}
+    .step{border-right:0;border-bottom:1px solid var(--border);}
+    .step:nth-child(odd){border-right:1px solid var(--border);}
+    .step:nth-last-child(-n+2){border-bottom:0;}
+  }
+  @media(max-width:560px){ .steps{grid-template-columns:1fr;} .step{border-right:0!important;border-bottom:1px solid var(--border);} }
+
+  /* RESULTS */
+  .results{position:relative;}
+  .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-soft);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+  .result{background:var(--bg-2);padding:44px 28px;text-align:left;}
+  .result .big{
+    font-family:var(--display);font-size:clamp(40px,5vw,64px);font-weight:700;letter-spacing:-.03em;
+    background:linear-gradient(180deg,#fff,#8B93A1);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    display:flex;align-items:baseline;gap:6px;
+  }
+  .result .big .unit{font-size:.45em;color:var(--accent);-webkit-text-fill-color:var(--accent);font-weight:600;}
+  .result .lab{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-top:8px;}
+  @media(max-width:820px){.results-grid{grid-template-columns:1fr 1fr;}}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;}
+  .about-visual{
+    aspect-ratio:1/1;border:1px solid var(--border);border-radius:20px;background:
+      radial-gradient(400px 200px at 50% 0%, rgba(125,249,255,.15), transparent 60%),
+      linear-gradient(180deg,#14171C,#0F1114);
+    position:relative;overflow:hidden;
+  }
+  .about-visual::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size:40px 40px;
+  }
+  .about-visual .sig{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--script);font-size:160px;color:var(--accent);font-weight:400;
+    text-shadow:0 0 60px rgba(212,255,58,.3);line-height:1;
+  }
+  .about h2{margin-bottom:22px;}
+  .about .lead{margin-bottom:22px;}
+  .about p{color:var(--muted);margin-bottom:16px;font-size:15px;}
+  .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;}
+  .about-grid div{border:1px solid var(--border);border-radius:12px;padding:14px;}
+  .about-grid div .v{font-family:var(--display);font-size:22px;font-weight:600;color:var(--accent);}
+  .about-grid div .l{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-top:4px;}
+  @media(max-width:900px){ .about{grid-template-columns:1fr;gap:40px;} }
+
+  /* FOR WHOM */
+  .for-whom{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .for-card{
+    background:var(--bg-2);border:1px solid var(--border);border-radius:20px;padding:36px;
+  }
+  .for-card.yes{border-color:rgba(212,255,58,.35);background:linear-gradient(180deg,rgba(212,255,58,.04),transparent);}
+  .for-card h3{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .for-card h3 .tag{font-family:var(--mono);font-size:10px;letter-spacing:.2em;padding:4px 8px;border-radius:4px;}
+  .for-card.yes h3 .tag{background:var(--accent);color:#0A0A0A;}
+  .for-card.no h3 .tag{background:var(--surface);color:var(--muted);border:1px solid var(--border);}
+  .for-card ul{display:flex;flex-direction:column;gap:14px;}
+  .for-card ul li{display:flex;gap:12px;font-size:15px;color:var(--muted);}
+  .for-card.yes ul li::before{content:"✓";color:var(--accent);font-weight:700;}
+  .for-card.no ul li::before{content:"×";color:var(--muted-2);font-weight:700;}
+  @media(max-width:820px){.for-whom{grid-template-columns:1fr;}}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-q{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:22px 0;width:100%;text-align:left;font-size:17px;font-family:var(--display);font-weight:500;
+  }
+  .faq-q .plus{
+    width:28px;height:28px;border-radius:999px;border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;transition:all .25s ease;flex-shrink:0;
+  }
+  .faq-item.open .faq-q .plus{background:var(--accent);color:#0A0A0A;border-color:var(--accent);transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:15px;}
+  .faq-a > div{padding:0 0 22px;max-width:70ch;}
+  .faq-item.open .faq-a{max-height:400px;}
+
+  /* FINAL CTA */
+  .final{
+    border:1px solid var(--border);border-radius:28px;padding:72px 48px;
+    background:
+      radial-gradient(600px 300px at 20% 0%, rgba(212,255,58,.15), transparent 60%),
+      radial-gradient(600px 300px at 80% 100%, rgba(125,249,255,.10), transparent 60%),
+      linear-gradient(180deg,#14171C,#0A0A0A);
+    text-align:center;position:relative;overflow:hidden;
+  }
+  .final h2{max-width:18ch;margin:0 auto 20px;}
+  .final .lead{margin:0 auto 36px;}
+  .final .hero-ctas{justify-content:center;}
+  @media(max-width:720px){ .final{padding:48px 24px;} }
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:60px 0 30px;margin-top:80px;}
+  .foot-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  footer h5{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;}
+  footer ul{display:flex;flex-direction:column;gap:10px;}
+  footer a{color:var(--text);font-size:14px;transition:color .2s ease;}
+  footer a:hover{color:var(--accent);}
+  .foot-bottom{border-top:1px solid var(--border-soft);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.12em;}
+  @media(max-width:720px){.foot-top{grid-template-columns:1fr;}}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  .reveal.d1{transition-delay:.08s;}
+  .reveal.d2{transition-delay:.16s;}
+  .reveal.d3{transition-delay:.24s;}
+  .reveal.d4{transition-delay:.32s;}
+
+  /* Cursor spotlight */
+  .spotlight{
+    position:fixed;width:380px;height:380px;border-radius:999px;pointer-events:none;z-index:1;
+    background:radial-gradient(circle, rgba(212,255,58,.07), transparent 70%);
+    transform:translate(-50%,-50%);opacity:0;transition:opacity .4s ease;
+  }
+  @media(hover:hover){ .spotlight{opacity:1;} }
+
+  /* Mobile menu */
+  .mobile-menu{
+    position:fixed;inset:60px 0 0;background:var(--bg);z-index:49;display:none;flex-direction:column;padding:32px 24px 48px;gap:20px;
+    overflow-y:auto;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-size:28px;font-family:var(--display);}
+  .mobile-menu .btn{width:fit-content;margin-top:16px;}
+
+  /* lang hide — FR by default (works even if data-lang attr is missing) */
+  [data-translate]{display:none;}
+  [data-translate="fr"]{display:inline;}
+  body[data-lang="en"] [data-translate]{display:none;}
+  body[data-lang="en"] [data-translate="en"]{display:inline;}
+  body[data-lang="de"] [data-translate]{display:none;}
+  body[data-lang="de"] [data-translate="de"]{display:inline;}
+
+  /* ============================================== */
+  /* INVESTOR BAND (rebuilt with proper classes)    */
+  /* ============================================== */
+  .investor-band{padding:60px 0;}
+  .investor-card{
+    padding:48px;
+    background:linear-gradient(135deg,#0F1114 0%, #14171C 50%, #0A0A0A 100%);
+    border:1px solid var(--border);border-radius:20px;
+    display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;
+    position:relative;overflow:hidden;
+  }
+  .investor-h2{margin:14px 0 16px;font-size:clamp(22px,3vw,40px);}
+  .investor-p{color:var(--muted);font-size:15px;max-width:54ch;}
+  .investor-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .investor-stat{border:1px solid var(--border);border-radius:12px;padding:18px;background:var(--bg-2);}
+  .investor-stat .v{font-family:var(--display);font-size:32px;font-weight:700;color:var(--accent);letter-spacing:-.02em;line-height:1;}
+  .investor-stat .v small{font-size:14px;}
+  .investor-stat .l{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-top:8px;}
+  .investor-stat.span-2{grid-column:span 2;}
+  .investor-stat .title{font-family:var(--display);font-size:17px;font-weight:500;color:var(--text);line-height:1.3;}
+  .investor-stat .sub{color:var(--muted);font-size:13px;margin-top:6px;}
+
+  /* ============================================== */
+  /* MOBILE PASS — fluidify from 320px to 960px     */
+  /* ============================================== */
+
+  /* Tablet & below: investor band stacks */
+  @media (max-width: 960px){
+    .investor-card{grid-template-columns:1fr;gap:28px;padding:40px;}
+    .sec-head{gap:24px;margin-bottom:48px;}
+  }
+
+  /* Tablet small: generic tighter spacing */
+  @media (max-width: 820px){
+    section{padding:80px 0;}
+    .sec-head{margin-bottom:40px;}
+    h1{font-size:clamp(34px,7.5vw,64px);}
+    h2{font-size:clamp(28px,5vw,44px);}
+    .lead{font-size:16px;}
+    .final{padding:56px 28px;border-radius:22px;}
+  }
+
+  /* Big phone */
+  @media (max-width: 720px){
+    section{padding:64px 0;}
+    .wrap{padding:0 18px;}
+
+    /* Nav */
+    .nav-inner{padding:12px 16px;gap:10px;}
+    .lang button{padding:5px 8px;font-size:10px;letter-spacing:.1em;}
+    .lang{padding:2px;}
+    .burger{width:38px;height:38px;}
+
+    /* Typography */
+    h1{font-size:clamp(32px,8.4vw,52px);letter-spacing:-.025em;}
+    h2{font-size:clamp(26px,6.5vw,40px);letter-spacing:-.015em;}
+    h3{font-size:clamp(19px,4.4vw,24px);}
+
+    /* Hero */
+    .hero{padding:120px 0 40px;}
+    .hero-inner{gap:36px;}
+    .hero-badge{padding:7px 12px;font-size:10px;letter-spacing:.14em;}
+    .hero-ctas{gap:10px;}
+    .btn{padding:13px 18px;font-size:14px;}
+    .hero-stats{grid-template-columns:1fr 1fr;border-radius:14px;margin-top:36px;}
+    .hero-stats .stat{padding:18px 16px;}
+    .stat .v{font-size:clamp(22px,5vw,28px);}
+    .stat .l{font-size:10px;letter-spacing:.12em;}
+
+    /* Hero visual (portrait block) */
+    .hero-visual{aspect-ratio:5/4;border-radius:16px;}
+    .hero-visual .portrait-placeholder .circle{width:130px;height:130px;font-size:48px;}
+    .hero-visual .ticker{font-size:9px;}
+
+    /* Marquee */
+    .marquee{padding:16px 0;}
+    .marquee-track{gap:40px;animation-duration:28s;}
+    .marquee-track span{gap:40px;font-size:11px;letter-spacing:.16em;}
+
+    /* Pillars */
+    .pillar{padding:26px 22px;border-radius:16px;}
+    .pillar .num{margin-bottom:18px;}
+    .pillar p{font-size:14.5px;}
+
+    /* Steps */
+    .steps{border-radius:16px;}
+    .step{padding:26px 22px;}
+    .step .n{font-size:36px;margin-bottom:16px;}
+
+    /* Results */
+    .result{padding:32px 22px;}
+    .result .big{font-size:clamp(38px,10vw,54px);}
+
+    /* About */
+    .about{gap:32px;}
+    .about-visual{border-radius:16px;aspect-ratio:5/3;}
+    .about-visual .sig{font-size:clamp(72px,18vw,118px);text-shadow:0 0 30px rgba(212,255,58,.25);}
+    /* Stack about-grid as horizontal rows on mobile */
+    .about-grid{grid-template-columns:1fr;gap:10px;margin-top:28px;}
+    .about-grid div{
+      padding:14px 18px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .about-grid div .v{font-size:22px;line-height:1;}
+    .about-grid div .l{margin-top:0;font-size:10px;letter-spacing:.14em;text-align:right;}
+
+    /* For whom */
+    .for-card{padding:26px 22px;border-radius:16px;}
+    .for-card ul li{font-size:14.5px;}
+
+    /* FAQ */
+    .faq-q{font-size:16px;padding:20px 0;gap:12px;}
+    .faq-q .plus{width:26px;height:26px;}
+
+    /* Final CTA */
+    .final{padding:44px 24px;border-radius:20px;}
+
+    /* Investor band */
+    .investor-band{padding:40px 0;}
+    .investor-card{padding:32px 24px;gap:24px;border-radius:16px;}
+    .investor-stat{padding:16px;}
+    .investor-stat .v{font-size:26px;}
+    .investor-stat .title{font-size:16px;}
+
+    /* Footer */
+    footer{padding:48px 0 24px;margin-top:40px;}
+    .foot-top{gap:28px;margin-bottom:28px;}
+    .foot-bottom{font-size:10px;}
+  }
+
+  /* Small phone */
+  @media (max-width: 480px){
+    .wrap{padding:0 16px;}
+    .nav-inner{padding:10px 14px;gap:8px;}
+    .logo .mark{font-size:14px;letter-spacing:.24em;}
+    .logo .script{font-size:22px;}
+
+    h1{font-size:clamp(30px,9vw,44px);}
+    h2{font-size:clamp(24px,7vw,34px);}
+
+    .hero{padding:108px 0 32px;}
+    .hero-badge{max-width:100%;white-space:normal;text-align:left;line-height:1.4;padding:8px 12px;}
+    .hero-ctas{flex-direction:column;align-items:stretch;}
+    .hero-ctas .btn{justify-content:center;}
+    .hero-stats{grid-template-columns:1fr;}
+    .hero-stats .stat{padding:16px;}
+
+    .hero-visual{aspect-ratio:4/3;}
+    .hero-visual .portrait-placeholder .circle{width:110px;height:110px;font-size:40px;}
+    .hero-visual .ticker{padding:0 12px;font-size:8px;letter-spacing:.1em;}
+    .hero-visual .corners span{width:14px;height:14px;}
+
+    .result .big{font-size:clamp(32px,11vw,44px);}
+    .result .big .unit{font-size:.5em;}
+
+    .about-visual{aspect-ratio:16/9;}
+    .about-visual .sig{font-size:clamp(60px,16vw,96px);}
+
+    /* Footer tighter on small mobile */
+    footer{padding:40px 0 20px;margin-top:32px;}
+    .foot-top .logo{margin-bottom:12px;}
+    footer h5{margin-bottom:12px;}
+    footer ul{gap:8px;}
+    .foot-bottom{flex-direction:column;align-items:flex-start;gap:8px;padding-top:18px;}
+
+    .final{padding:36px 20px;}
+    .final .hero-ctas{flex-direction:column;align-items:stretch;}
+
+    .investor-card{padding:28px 22px;}
+
+    .sec-head h2{max-width:100%;}
+    .sec-head .lead{max-width:100%;}
+  }
+
+  /* Extra narrow (320–380px) */
+  @media (max-width: 380px){
+    h1{font-size:30px;line-height:1.08;}
+    .hero-badge{font-size:9.5px;}
+    .lang button{padding:4px 6px;font-size:9.5px;}
+    .btn{padding:12px 16px;font-size:13.5px;}
+    .stat .v{font-size:22px;}
+  }
+
+  /* Mobile menu polish */
+  @media (max-width: 900px){
+    .mobile-menu{padding:32px 20px 60px;gap:16px;overflow-y:auto;}
+    .mobile-menu a{font-size:24px;}
+    .mobile-menu .mm-lang{
+      display:flex;gap:6px;margin-top:16px;padding-top:20px;border-top:1px solid var(--border);
+    }
+    .mobile-menu .mm-lang button{
+      font-family:var(--mono);font-size:11px;letter-spacing:.15em;padding:8px 14px;
+      border:1px solid var(--border);border-radius:999px;color:var(--muted);background:var(--surface);
+    }
+    .mobile-menu .mm-lang button.active{background:var(--accent);color:#0A0A0A;border-color:var(--accent);}
+  }
+</style>
+</head>
+<body data-lang="fr">
+
+<div class="spotlight" id="spotlight"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="Schwarz Signature">
+      <span class="mark">SCHWARZ</span>
+      <span class="script">signature</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services"><span data-translate="fr">Services</span><span data-translate="en">Services</span><span data-translate="de">Leistungen</span></a>
+      <a href="#approach"><span data-translate="fr">Approche</span><span data-translate="en">Approach</span><span data-translate="de">Vorgehen</span></a>
+      <a href="#results"><span data-translate="fr">Résultats</span><span data-translate="en">Results</span><span data-translate="de">Ergebnisse</span></a>
+      <a href="#about"><span data-translate="fr">À propos</span><span data-translate="en">About</span><span data-translate="de">Über</span></a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-setlang="fr" class="active">FR</button>
+        <button data-setlang="en">EN</button>
+        <button data-setlang="de">DE</button>
+      </div>
+      <a href="#contact" class="btn btn-primary nav-cta">
+        <span data-translate="fr">Réserver un call</span>
+        <span data-translate="en">Book a call</span>
+        <span data-translate="de">Termin buchen</span>
+        <span class="arrow">→</span>
+      </a>
+      <button class="burger" aria-label="Menu" id="burger"><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mmenu">
+  <a href="#services"><span data-translate="fr">Services</span><span data-translate="en">Services</span><span data-translate="de">Leistungen</span></a>
+  <a href="#approach"><span data-translate="fr">Approche</span><span data-translate="en">Approach</span><span data-translate="de">Vorgehen</span></a>
+  <a href="#results"><span data-translate="fr">Résultats</span><span data-translate="en">Results</span><span data-translate="de">Ergebnisse</span></a>
+  <a href="#about"><span data-translate="fr">À propos</span><span data-translate="en">About</span><span data-translate="de">Über</span></a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact" class="btn btn-primary" style="width:fit-content;">
+    <span data-translate="fr">Réserver un call</span>
+    <span data-translate="en">Book a call</span>
+    <span data-translate="de">Termin buchen</span>
+    <span class="arrow">→</span>
+  </a>
+  <div class="mm-lang">
+    <button data-setlang="fr" class="active">FR</button>
+    <button data-setlang="en">EN</button>
+    <button data-setlang="de">DE</button>
+  </div>
+</div>
+
+<div id="top"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge reveal">
+          <span class="dot"></span>
+          <span data-translate="fr">Founder · Investor · Operator — Suisse</span>
+          <span data-translate="en">Founder · Investor · Operator — Switzerland</span>
+          <span data-translate="de">Founder · Investor · Operator — Schweiz</span>
+        </div>
+        <h1 class="reveal d1">
+          <span class="line" data-translate="fr">Parti de zéro.</span>
+          <span class="line" data-translate="en">From zero.</span>
+          <span class="line" data-translate="de">Bei null angefangen.</span>
+          <span class="line accent-word" data-translate="fr">8M+ en 3 ans.</span>
+          <span class="line accent-word" data-translate="en">8M+ in 3 years.</span>
+          <span class="line accent-word" data-translate="de">8M+ in 3 Jahren.</span>
+          <span class="line" data-translate="fr">Les mêmes systèmes, dans votre business.</span>
+          <span class="line" data-translate="en">The same playbooks — in your business.</span>
+          <span class="line" data-translate="de">Dieselben Systeme — in Ihrem Unternehmen.</span>
+        </h1>
+        <p class="lead reveal d2">
+          <span data-translate="fr">J'ai lancé et fait scaler mes propres entreprises jusqu'à plus de 8 millions de chiffre d'affaires cumulés en 3 ans — en partant de zéro. J'investis désormais dans d'autres opérateurs et j'accompagne les dirigeants qui veulent jouer dans la même cour : wholesale, digitalisation, automatisation, formation commerciale.</span>
+          <span data-translate="en">I launched and scaled my own companies past 8M+ in cumulative revenue in 3 years — from a blank sheet. I now invest in other operators and work with founders who want to play in that league: wholesale, digital, automation, sales training.</span>
+          <span data-translate="de">Ich habe meine eigenen Unternehmen aus dem Nichts auf über 8M+ Gesamtumsatz in 3 Jahren skaliert. Heute investiere ich in andere Operatoren und begleite Unternehmer, die in derselben Liga spielen wollen: Wholesale, Digitalisierung, Automatisierung, Vertriebsschulung.</span>
+        </p>
+        <div class="hero-ctas reveal d3">
+          <a href="#contact" class="btn btn-primary">
+            <span data-translate="fr">Réserver un call stratégique</span>
+            <span data-translate="en">Book a strategy call</span>
+            <span data-translate="de">Strategiegespräch buchen</span>
+            <span class="arrow">→</span>
+          </a>
+          <a href="#services" class="btn btn-ghost">
+            <span data-translate="fr">Voir l'offre</span>
+            <span data-translate="en">See what I do</span>
+            <span data-translate="de">Leistungen ansehen</span>
+          </a>
+        </div>
+        <div class="hero-stats reveal d4">
+          <div class="stat">
+            <div class="v" data-counter="8" data-suffix="M+">CHF 8M+</div>
+            <div class="l">
+              <span data-translate="fr">Générés par mes boîtes · 3 ans · from zero</span>
+              <span data-translate="en">Generated by my own companies · 3 yrs · from zero</span>
+              <span data-translate="de">Mit eigenen Firmen · 3 Jahre · bei null gestartet</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="v" data-counter="3" data-suffix="">3</div>
+            <div class="l">
+              <span data-translate="fr">Entreprises fondées &amp; scalées</span>
+              <span data-translate="en">Companies founded &amp; scaled</span>
+              <span data-translate="de">Gegründete &amp; skalierte Firmen</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="v" data-counter="40" data-suffix="+">40+</div>
+            <div class="l">
+              <span data-translate="fr">Entrepreneurs accompagnés</span>
+              <span data-translate="en">Founders supported</span>
+              <span data-translate="de">Begleitete Unternehmer</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="v" data-counter="7" data-suffix="">7</div>
+            <div class="l">
+              <span data-translate="fr">Participations en portefeuille</span>
+              <span data-translate="en">Portfolio investments</span>
+              <span data-translate="de">Beteiligungen im Portfolio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal d2">
+        <div class="corners"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+        <div class="portrait-placeholder">
+          <div class="circle">PS</div>
+          <div>PASCAL SCHWARZ</div>
+          <div style="color:var(--muted)">
+            <span data-translate="fr">[ photo à intégrer ]</span>
+            <span data-translate="en">[ portrait to insert ]</span>
+            <span data-translate="de">[ Porträt einfügen ]</span>
+          </div>
+        </div>
+        <div class="ticker">
+          <span>LAT 46.9°N</span>
+          <span>CH · EU · INTL</span>
+          <span>v.2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Wholesale Strategy</span>
+    <span>Digital Transformation</span>
+    <span>Acquisition Automation</span>
+    <span>Content Automation</span>
+    <span>Sales Training</span>
+    <span>Setter Coaching</span>
+    <span>Operator-Led Growth</span>
+    <span>Wholesale Strategy</span>
+    <span>Digital Transformation</span>
+    <span>Acquisition Automation</span>
+    <span>Content Automation</span>
+    <span>Sales Training</span>
+    <span>Setter Coaching</span>
+    <span>Operator-Led Growth</span>
+  </div>
+</div>
+
+<!-- SERVICES / 4 PILLARS -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <div class="eyebrow"><span data-translate="fr">Services</span><span data-translate="en">Services</span><span data-translate="de">Leistungen</span></div>
+        <h2 style="margin-top:14px;">
+          <span data-translate="fr">Quatre piliers. Un seul objectif : faire scaler votre business.</span>
+          <span data-translate="en">Four pillars. One goal: make your business scale.</span>
+          <span data-translate="de">Vier Säulen. Ein Ziel: Ihr Unternehmen skalieren.</span>
+        </h2>
+      </div>
+      <p class="lead reveal d1">
+        <span data-translate="fr">Tout ce que je déploie chez vous, je l'ai construit chez moi d'abord. Les mêmes systèmes qui ont emmené mes boîtes à 8M+ en 3 ans — installés dans votre business, par l'opérateur qui les a construits.</span>
+        <span data-translate="en">Everything I deploy in your business, I built in mine first. The same systems that took my companies past 8M+ in 3 years — installed in your business, by the operator who built them.</span>
+        <span data-translate="de">Alles, was ich bei Ihnen einsetze, habe ich zuerst selbst gebaut. Die gleichen Systeme, die meine Firmen auf 8M+ in 3 Jahren gebracht haben — installiert in Ihrem Unternehmen, vom Operator, der sie gebaut hat.</span>
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="num">01 · <span data-translate="fr">Stratégie &amp; Wholesale</span><span data-translate="en">Strategy &amp; Wholesale</span><span data-translate="de">Strategie &amp; Wholesale</span></div>
+        <h3>
+          <span data-translate="fr">Ouvrir le canal qui change votre P&amp;L.</span>
+          <span data-translate="en">Open the channel that rewrites your P&amp;L.</span>
+          <span data-translate="de">Der Kanal, der Ihre Zahlen verändert.</span>
+        </h3>
+        <p>
+          <span data-translate="fr">Conception et mise en marché d'une offre wholesale structurée : grille tarifaire, packaging revendeur, argumentaire, outils de vente, pipeline de distributeurs.</span>
+          <span data-translate="en">Design and launch of a structured wholesale offer: pricing tiers, reseller packaging, pitch, sales tools, distributor pipeline.</span>
+          <span data-translate="de">Konzeption und Markteinführung eines strukturierten Wholesale-Angebots: Preisstruktur, Händlerpaket, Argumentation, Verkaufstools, Vertriebspartner-Pipeline.</span>
+        </p>
+        <ul>
+          <li><span data-translate="fr">Audit &amp; positionnement de l'offre B2B</span><span data-translate="en">B2B offer audit &amp; positioning</span><span data-translate="de">B2B-Angebot Audit &amp; Positionierung</span></li>
+          <li><span data-translate="fr">Construction du kit revendeur complet</span><span data-translate="en">Full reseller kit build</span><span data-translate="de">Komplettes Händler-Kit</span></li>
+          <li><span data-translate="fr">Signature des premiers distributeurs</span><span data-translate="en">Onboarding of first distributors</span><span data-translate="de">Gewinnung der ersten Distributoren</span></li>
+        </ul>
+      </div>
+
+      <div class="pillar reveal d1">
+        <div class="num">02 · <span data-translate="fr">Transformation digitale</span><span data-translate="en">Digital Transformation</span><span data-translate="de">Digitale Transformation</span></div>
+        <h3>
+          <span data-translate="fr">Votre boîte, remise à l'état de l'art 2026.</span>
+          <span data-translate="en">Your company, upgraded to 2026 standards.</span>
+          <span data-translate="de">Ihr Unternehmen auf Stand 2026.</span>
+        </h3>
+        <p>
+          <span data-translate="fr">Refonte de l'infrastructure digitale : site, CRM, stack outils, data, workflows internes. On remplace les fichiers Excel et les processus papier par un système qui respire.</span>
+          <span data-translate="en">Full digital overhaul: website, CRM, tool stack, data, internal workflows. Excel sheets and paper processes out — a living system in.</span>
+          <span data-translate="de">Komplette digitale Erneuerung: Website, CRM, Tool-Stack, Daten, interne Abläufe. Excel-Dateien und Papierprozesse raus — ein lebendiges System rein.</span>
+        </p>
+        <ul>
+          <li><span data-translate="fr">Cartographie des process &amp; stack actuel</span><span data-translate="en">Current process &amp; stack mapping</span><span data-translate="de">Prozess- &amp; Stack-Analyse</span></li>
+          <li><span data-translate="fr">Migration vers les bons outils</span><span data-translate="en">Migration to the right tools</span><span data-translate="de">Migration auf passende Tools</span></li>
+          <li><span data-translate="fr">Formation des équipes &amp; documentation</span><span data-translate="en">Team training &amp; documentation</span><span data-translate="de">Team-Schulung &amp; Dokumentation</span></li>
+        </ul>
+      </div>
+
+      <div class="pillar reveal d2">
+        <div class="num">03 · <span data-translate="fr">Automatisation</span><span data-translate="en">Automation</span><span data-translate="de">Automatisierung</span></div>
+        <h3>
+          <span data-translate="fr">Acquisition, admin, contenu : tout ce qui peut tourner seul, tournera.</span>
+          <span data-translate="en">Acquisition, admin, content: everything that can run on autopilot, will.</span>
+          <span data-translate="de">Akquise, Admin, Content: Was automatisiert laufen kann, wird es auch.</span>
+        </h3>
+        <p>
+          <span data-translate="fr">Systèmes d'acquisition prédictibles, automatisation administrative, création de contenu multi-canal assistée par IA. Vous récupérez des semaines par mois.</span>
+          <span data-translate="en">Predictable acquisition systems, back-office automation, AI-assisted multi-channel content creation. You get weeks of your time back every month.</span>
+          <span data-translate="de">Planbare Akquise-Systeme, Back-Office-Automatisierung, KI-gestützte Content-Erstellung. Sie gewinnen jeden Monat Wochen zurück.</span>
+        </p>
+        <ul>
+          <li><span data-translate="fr">Funnels outbound &amp; inbound automatisés</span><span data-translate="en">Automated outbound &amp; inbound funnels</span><span data-translate="de">Automatisierte Outbound- &amp; Inbound-Funnels</span></li>
+          <li><span data-translate="fr">Processus admin &amp; facturation sans friction</span><span data-translate="en">Friction-free admin &amp; billing</span><span data-translate="de">Reibungslose Admin- &amp; Abrechnungsprozesse</span></li>
+          <li><span data-translate="fr">Usine à contenu IA &amp; publications multi-canal</span><span data-translate="en">AI content engine &amp; multi-channel publishing</span><span data-translate="de">KI-Content-Engine &amp; Multi-Channel-Publishing</span></li>
+        </ul>
+      </div>
+
+      <div class="pillar reveal d3">
+        <div class="num">04 · <span data-translate="fr">Formation commerciale</span><span data-translate="en">Sales Training</span><span data-translate="de">Vertriebsschulung</span></div>
+        <h3>
+          <span data-translate="fr">Des setters qui qualifient. Des closers qui signent.</span>
+          <span data-translate="en">Setters who qualify. Closers who close.</span>
+          <span data-translate="de">Setter, die qualifizieren. Closer, die abschliessen.</span>
+        </h3>
+        <p>
+          <span data-translate="fr">Programme complet de formation &amp; coaching des équipes commerciales : scripts, objection handling, coaching enregistrements, playbooks, KPIs et rémunération.</span>
+          <span data-translate="en">End-to-end sales team training &amp; coaching: scripts, objection handling, call reviews, playbooks, KPIs and comp plans.</span>
+          <span data-translate="de">Komplettes Sales-Team-Programm: Skripte, Einwandbehandlung, Call-Reviews, Playbooks, KPIs und Vergütung.</span>
+        </p>
+        <ul>
+          <li><span data-translate="fr">Recrutement &amp; onboarding structuré</span><span data-translate="en">Structured hiring &amp; onboarding</span><span data-translate="de">Strukturierte Einstellung &amp; Onboarding</span></li>
+          <li><span data-translate="fr">Coaching call-by-call &amp; scorecards</span><span data-translate="en">Call-by-call coaching &amp; scorecards</span><span data-translate="de">Call-für-Call-Coaching &amp; Scorecards</span></li>
+          <li><span data-translate="fr">Systèmes d'incentives &amp; management</span><span data-translate="en">Incentive &amp; management systems</span><span data-translate="de">Incentive- &amp; Führungssysteme</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach" style="padding-top:40px;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <div class="eyebrow"><span data-translate="fr">Approche</span><span data-translate="en">Approach</span><span data-translate="de">Vorgehen</span></div>
+        <h2 style="margin-top:14px;">
+          <span data-translate="fr">Un process simple. Des résultats mesurables.</span>
+          <span data-translate="en">A simple process. Measurable outcomes.</span>
+          <span data-translate="de">Einfacher Prozess. Messbare Ergebnisse.</span>
+        </h2>
+      </div>
+      <p class="lead reveal d1">
+        <span data-translate="fr">Quatre étapes, testées et répétées sur des dizaines de projets. De l'audit à la passation — pas de jargon, pas de slides sans action.</span>
+        <span data-translate="en">Four steps, tested across dozens of projects. From audit to handover — no jargon, no slides without action.</span>
+        <span data-translate="de">Vier Schritte, in dutzenden Projekten erprobt. Von der Analyse bis zur Übergabe — kein Jargon, keine leeren Folien.</span>
+      </p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="n">01 <small>Audit</small></div>
+        <h4><span data-translate="fr">Radiographie</span><span data-translate="en">X-ray</span><span data-translate="de">Analyse</span></h4>
+        <p><span data-translate="fr">Immersion dans votre opérationnel, entretiens équipes, analyse data, stack, offre. On sait exactement où le cash fuit.</span>
+           <span data-translate="en">Deep dive in your ops — team interviews, data, stack, offer. We know exactly where cash leaks.</span>
+           <span data-translate="de">Tiefer Einblick in Ihr Geschäft — Interviews, Daten, Stack, Angebot. Wir wissen, wo Geld verloren geht.</span></p>
+      </div>
+      <div class="step reveal d1">
+        <div class="n">02 <small>Plan</small></div>
+        <h4><span data-translate="fr">Feuille de route</span><span data-translate="en">Roadmap</span><span data-translate="de">Roadmap</span></h4>
+        <p><span data-translate="fr">Priorisation des leviers par impact &amp; effort. Plan 30/60/90 jours avec KPIs engagés de ma part.</span>
+           <span data-translate="en">Leverage prioritization by impact &amp; effort. 30/60/90-day plan with KPIs I commit to.</span>
+           <span data-translate="de">Priorisierung nach Wirkung &amp; Aufwand. 30/60/90-Tage-Plan mit KPIs, für die ich einstehe.</span></p>
+      </div>
+      <div class="step reveal d2">
+        <div class="n">03 <small>Build</small></div>
+        <h4><span data-translate="fr">Exécution</span><span data-translate="en">Execution</span><span data-translate="de">Umsetzung</span></h4>
+        <p><span data-translate="fr">Je construis les systèmes, forme les équipes, lance les canaux, boucle les automatisations. Mains dans le moteur.</span>
+           <span data-translate="en">I build the systems, train the teams, launch the channels, close the loops. Hands in the engine.</span>
+           <span data-translate="de">Ich baue die Systeme, schule die Teams, starte die Kanäle, schliesse die Automatisierungen.</span></p>
+      </div>
+      <div class="step reveal d3">
+        <div class="n">04 <small>Scale</small></div>
+        <h4><span data-translate="fr">Passation</span><span data-translate="en">Handover</span><span data-translate="de">Übergabe</span></h4>
+        <p><span data-translate="fr">Documentation, dashboards, relais internes. Votre boîte tourne sans moi — et continue de croître.</span>
+           <span data-translate="en">Documentation, dashboards, internal owners. Your company runs without me — and keeps growing.</span>
+           <span data-translate="de">Dokumentation, Dashboards, interne Verantwortliche. Ihr Unternehmen läuft ohne mich — und wächst weiter.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <div class="eyebrow"><span data-translate="fr">Résultats</span><span data-translate="en">Track record</span><span data-translate="de">Ergebnisse</span></div>
+        <h2 style="margin-top:14px;">
+          <span data-translate="fr">Les chiffres parlent. Et ils parlent fort.</span>
+          <span data-translate="en">Numbers talk. And mine speak loud.</span>
+          <span data-translate="de">Zahlen sprechen. Meine laut.</span>
+        </h2>
+      </div>
+      <p class="lead reveal d1">
+        <span data-translate="fr">Données agrégées des entreprises accompagnées, co-fondées ou dirigées entre 2023 et 2026.</span>
+        <span data-translate="en">Aggregated data from companies supported, co-founded or led between 2023 and 2026.</span>
+        <span data-translate="de">Aggregierte Daten aus begleiteten, mitgegründeten oder geführten Unternehmen (2023–2026).</span>
+      </p>
+    </div>
+    <div class="results-grid">
+      <div class="result reveal">
+        <div class="big"><span data-counter="8">0</span><span class="unit">M+ CHF</span></div>
+        <div class="lab"><span data-translate="fr">Générés par mes propres entreprises · 3 ans · from zero</span><span data-translate="en">Generated by my own companies · 3 yrs · from zero</span><span data-translate="de">Mit eigenen Firmen · 3 Jahre · bei null gestartet</span></div>
+      </div>
+      <div class="result reveal d1">
+        <div class="big"><span data-counter="3">0</span><span class="unit">&nbsp;</span></div>
+        <div class="lab"><span data-translate="fr">Boîtes fondées &amp; scalées</span><span data-translate="en">Companies founded &amp; scaled</span><span data-translate="de">Gegründete &amp; skalierte Firmen</span></div>
+      </div>
+      <div class="result reveal d2">
+        <div class="big"><span data-counter="7">0</span><span class="unit">&nbsp;</span></div>
+        <div class="lab"><span data-translate="fr">Participations en portefeuille</span><span data-translate="en">Portfolio investments</span><span data-translate="de">Beteiligungen im Portfolio</span></div>
+      </div>
+      <div class="result reveal d3">
+        <div class="big"><span data-counter="40">0</span><span class="unit">+</span></div>
+        <div class="lab"><span data-translate="fr">Entrepreneurs accompagnés</span><span data-translate="en">Founders supported</span><span data-translate="de">Begleitete Unternehmer</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-visual reveal">
+        <div class="sig">Pascal</div>
+      </div>
+      <div class="reveal d1">
+        <div class="eyebrow"><span data-translate="fr">À propos</span><span data-translate="en">About</span><span data-translate="de">Über mich</span></div>
+        <h2 style="margin:14px 0 22px;">
+          <span data-translate="fr">Je ne vends pas de théorie. Je vends ce que j'ai déjà fait.</span>
+          <span data-translate="en">I don't sell theory. I sell what I've already done.</span>
+          <span data-translate="de">Ich verkaufe keine Theorie. Ich verkaufe, was ich bereits getan habe.</span>
+        </h2>
+        <p class="lead">
+          <span data-translate="fr">Je suis Pascal Schwarz — fondateur, investisseur, opérateur. J'ai lancé mes entreprises à partir d'une feuille blanche et les ai menées à plus de 8 millions de CHF cumulés en 3 ans. Aujourd'hui, je déploie ce même savoir-faire chez d'autres dirigeants et j'investis dans ceux qui en valent la peine.</span>
+          <span data-translate="en">I'm Pascal Schwarz — founder, investor, operator. I launched my companies from a blank page and scaled them past 8M+ CHF combined in 3 years. Today I deploy that same operator know-how inside other founders' businesses — and back the ones worth backing.</span>
+          <span data-translate="de">Ich bin Pascal Schwarz — Gründer, Investor, Operator. Ich habe meine Unternehmen aus dem Nichts auf zusammen über 8M+ CHF in 3 Jahren skaliert. Heute bringe ich dieses Operator-Know-how in andere Unternehmen ein — und investiere in jene, die es wert sind.</span>
+        </p>
+        <p>
+          <span data-translate="fr">Je ne suis pas un consultant qui vend des frameworks lus dans un livre. Tout ce que je vous vends, je l'ai construit chez moi, cassé chez moi, réparé chez moi, et fait tourner à l'échelle. Les playbooks que j'applique chez vous sont ceux qui paient mes propres factures.</span>
+          <span data-translate="en">I'm not a consultant selling frameworks from a book. Everything I sell, I built myself, broke myself, fixed myself, ran at scale myself. The playbooks I apply in your business are the ones paying my own bills.</span>
+          <span data-translate="de">Ich bin kein Berater, der Frameworks aus Büchern verkauft. Alles, was ich anbiete, habe ich selbst gebaut, selbst zerbrochen, selbst repariert und selbst skaliert. Die Playbooks, die ich bei Ihnen anwende, bezahlen meine eigenen Rechnungen.</span>
+        </p>
+        <p>
+          <span data-translate="fr">Je travaille avec un nombre volontairement limité de dirigeants par an. C'est la condition pour livrer des résultats, pas des rapports — et pour que mes propres business continuent de tourner.</span>
+          <span data-translate="en">I deliberately work with a limited number of leaders per year. That's what it takes to deliver results, not reports — and to keep my own businesses running.</span>
+          <span data-translate="de">Ich arbeite bewusst mit einer begrenzten Anzahl von Führungskräften pro Jahr. Nur so entstehen Ergebnisse statt Reports — und meine eigenen Firmen laufen weiter.</span>
+        </p>
+        <div class="about-grid">
+          <div><div class="v">8M+</div><div class="l"><span data-translate="fr">CHF en 3 ans</span><span data-translate="en">CHF in 3 yrs</span><span data-translate="de">CHF in 3 J.</span></div></div>
+          <div><div class="v">3</div><div class="l"><span data-translate="fr">Boîtes fondées</span><span data-translate="en">Companies founded</span><span data-translate="de">Firmen gegründet</span></div></div>
+          <div><div class="v">7</div><div class="l"><span data-translate="fr">Investissements</span><span data-translate="en">Investments</span><span data-translate="de">Investments</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTOR BAND -->
+<section class="investor-band">
+  <div class="wrap">
+    <div class="investor-card reveal">
+      <div class="investor-copy">
+        <div class="eyebrow"><span data-translate="fr">Aussi investisseur</span><span data-translate="en">Also investing</span><span data-translate="de">Auch Investor</span></div>
+        <h2 class="investor-h2">
+          <span data-translate="fr">J'investis mon argent et mon temps dans les opérateurs qui le méritent.</span>
+          <span data-translate="en">I invest my money and my time in operators who earn it.</span>
+          <span data-translate="de">Ich investiere mein Geld und meine Zeit in Operatoren, die es verdienen.</span>
+        </h2>
+        <p class="investor-p">
+          <span data-translate="fr">Early-stage et scale-up, tickets de CHF 25k à 250k, souvent accompagnés de travail opérationnel. Focus : DTC, wholesale, SaaS vertical, agences scalables. Suisse &amp; Europe francophone/germanophone.</span>
+          <span data-translate="en">Early-stage and scale-up, tickets from CHF 25k to 250k, usually paired with operator involvement. Focus: DTC, wholesale, vertical SaaS, scalable agencies. Switzerland &amp; French/German-speaking Europe.</span>
+          <span data-translate="de">Early-Stage und Scale-up, Tickets von CHF 25k bis 250k, meist in Kombination mit operativer Mitarbeit. Fokus: DTC, Wholesale, Vertical SaaS, skalierbare Agenturen. Schweiz &amp; D-A-CH / Frankophon.</span>
+        </p>
+      </div>
+      <div class="investor-stats">
+        <div class="investor-stat">
+          <div class="v">7</div>
+          <div class="l"><span data-translate="fr">Participations</span><span data-translate="en">Investments</span><span data-translate="de">Beteiligungen</span></div>
+        </div>
+        <div class="investor-stat">
+          <div class="v">25–250<small>k</small></div>
+          <div class="l"><span data-translate="fr">Ticket CHF</span><span data-translate="en">Ticket CHF</span><span data-translate="de">Ticket CHF</span></div>
+        </div>
+        <div class="investor-stat span-2">
+          <div class="title">
+            <span data-translate="fr">Opérateur-investisseur → skin in the game.</span>
+            <span data-translate="en">Operator-investor → skin in the game.</span>
+            <span data-translate="de">Operator-Investor → skin in the game.</span>
+          </div>
+          <div class="sub">
+            <span data-translate="fr">Je ne mets jamais d'argent sans mettre aussi du travail.</span>
+            <span data-translate="en">I don't write a cheque without also writing code.</span>
+            <span data-translate="de">Kein Investment ohne eigene Arbeit.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <div class="eyebrow"><span data-translate="fr">Pour qui</span><span data-translate="en">Who it's for</span><span data-translate="de">Für wen</span></div>
+        <h2 style="margin-top:14px;">
+          <span data-translate="fr">On ne travaille pas avec tout le monde.</span>
+          <span data-translate="en">We don't work with everyone.</span>
+          <span data-translate="de">Wir arbeiten nicht mit jedem.</span>
+        </h2>
+      </div>
+      <p class="lead reveal d1">
+        <span data-translate="fr">La transparence évite les mauvaises décisions — des deux côtés. Voici où je fais la différence, et où je ne suis pas le bon partenaire.</span>
+        <span data-translate="en">Transparency avoids bad decisions — on both sides. Here's where I deliver, and where I'm not the right partner.</span>
+        <span data-translate="de">Transparenz verhindert Fehlentscheidungen — auf beiden Seiten. Hier liefere ich, hier bin ich nicht der Richtige.</span>
+      </p>
+    </div>
+    <div class="for-whom">
+      <div class="for-card yes reveal">
+        <h3><span data-translate="fr">Parfait si</span><span data-translate="en">Right fit if</span><span data-translate="de">Passend wenn</span> <span class="tag">MATCH</span></h3>
+        <ul>
+          <li><span data-translate="fr">Vous dirigez une PME entre 500k et 20M de CA.</span><span data-translate="en">You run an SMB doing 500k–20M in revenue.</span><span data-translate="de">Sie führen ein KMU mit 500k–20M Umsatz.</span></li>
+          <li><span data-translate="fr">Vous voulez ouvrir un canal wholesale ou scaler l'existant.</span><span data-translate="en">You want to open a wholesale channel or scale an existing one.</span><span data-translate="de">Sie wollen einen Wholesale-Kanal starten oder skalieren.</span></li>
+          <li><span data-translate="fr">Vos process tournent encore à coup d'Excel et d'e-mails.</span><span data-translate="en">Your ops still run on Excel and email threads.</span><span data-translate="de">Ihre Abläufe laufen noch über Excel und E-Mails.</span></li>
+          <li><span data-translate="fr">Votre équipe commerciale ferme mal ou n'est pas structurée.</span><span data-translate="en">Your sales team under-closes or isn't structured.</span><span data-translate="de">Ihr Vertriebsteam schliesst schlecht ab oder ist unstrukturiert.</span></li>
+          <li><span data-translate="fr">Vous êtes prêt à exécuter rapidement et à tenir vos engagements.</span><span data-translate="en">You're ready to execute fast and hold your end of the deal.</span><span data-translate="de">Sie sind bereit, schnell umzusetzen und Ihren Teil zu halten.</span></li>
+        </ul>
+      </div>
+      <div class="for-card no reveal d1">
+        <h3><span data-translate="fr">Pas adapté si</span><span data-translate="en">Not a fit if</span><span data-translate="de">Unpassend wenn</span> <span class="tag">PASS</span></h3>
+        <ul>
+          <li><span data-translate="fr">Vous cherchez un consultant qui produit des slides.</span><span data-translate="en">You want a consultant who ships slides.</span><span data-translate="de">Sie suchen einen Berater, der Folien liefert.</span></li>
+          <li><span data-translate="fr">Vous n'avez pas encore de produit validé par le marché.</span><span data-translate="en">You don't have a market-validated product yet.</span><span data-translate="de">Ihr Produkt ist noch nicht marktvalidiert.</span></li>
+          <li><span data-translate="fr">Vous voulez tout sous-traiter sans vous impliquer.</span><span data-translate="en">You want to outsource everything without engaging.</span><span data-translate="de">Sie wollen alles auslagern, ohne sich einzubringen.</span></li>
+          <li><span data-translate="fr">Vous cherchez des quick wins sans changer les fondations.</span><span data-translate="en">You want quick wins without touching the foundations.</span><span data-translate="de">Sie wollen schnelle Erfolge ohne fundamentale Änderungen.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:40px;">
+      <div class="reveal">
+        <div class="eyebrow">FAQ</div>
+        <h2 style="margin-top:14px;">
+          <span data-translate="fr">Les questions qu'on me pose toujours.</span>
+          <span data-translate="en">The questions I always get.</span>
+          <span data-translate="de">Die häufigsten Fragen.</span>
+        </h2>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>
+            <span data-translate="fr">Combien coûte une mission type ?</span>
+            <span data-translate="en">How much does a typical engagement cost?</span>
+            <span data-translate="de">Was kostet ein typisches Mandat?</span>
+          </span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><div>
+          <span data-translate="fr">Les missions sont structurées selon le périmètre : audit seul, transformation complète, ou partenariat de croissance. Fourchette indicative : CHF 15k à 150k+ par mandat. Tous les chiffres sont partagés au premier call.</span>
+          <span data-translate="en">Engagements are scoped: audit only, full transformation, or growth partnership. Indicative range: CHF 15k to 150k+ per engagement. All numbers are shared on the first call.</span>
+          <span data-translate="de">Die Mandate sind je nach Umfang gestaffelt: reines Audit, vollständige Transformation oder Wachstumspartnerschaft. Richtwert: CHF 15k bis 150k+ pro Mandat. Konkrete Zahlen beim Erstgespräch.</span>
+        </div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q">
+          <span>
+            <span data-translate="fr">Combien de temps dure une transformation ?</span>
+            <span data-translate="en">How long does a transformation take?</span>
+            <span data-translate="de">Wie lange dauert eine Transformation?</span>
+          </span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><div>
+          <span data-translate="fr">Les résultats visibles arrivent en 30 à 60 jours. Une transformation complète (stratégie + digital + automatisation + équipe) se déploie sur 3 à 9 mois, selon la taille et la complexité.</span>
+          <span data-translate="en">Visible results land in 30–60 days. A full transformation (strategy + digital + automation + team) runs 3 to 9 months, depending on size and complexity.</span>
+          <span data-translate="de">Erste sichtbare Ergebnisse nach 30–60 Tagen. Eine vollständige Transformation dauert 3 bis 9 Monate, je nach Grösse und Komplexität.</span>
+        </div></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <button class="faq-q">
+          <span>
+            <span data-translate="fr">Travaillez-vous avec des sociétés hors de Suisse ?</span>
+            <span data-translate="en">Do you work with companies outside Switzerland?</span>
+            <span data-translate="de">Arbeiten Sie auch mit Firmen ausserhalb der Schweiz?</span>
+          </span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><div>
+          <span data-translate="fr">Oui. Base Suisse, clients en France, Benelux, DACH, UK. Les missions se font en hybride — déplacements sur site pour les phases critiques, remote pour le reste.</span>
+          <span data-translate="en">Yes. Based in Switzerland, clients across France, Benelux, DACH, UK. Hybrid delivery — on-site for critical milestones, remote for the rest.</span>
+          <span data-translate="de">Ja. Sitz Schweiz, Kunden in Frankreich, Benelux, DACH und UK. Hybrides Arbeitsmodell — vor Ort bei kritischen Phasen, sonst remote.</span>
+        </div></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <button class="faq-q">
+          <span>
+            <span data-translate="fr">Prenez-vous des participations ?</span>
+            <span data-translate="en">Do you take equity?</span>
+            <span data-translate="de">Nehmen Sie Beteiligungen?</span>
+          </span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><div>
+          <span data-translate="fr">Ponctuellement, sur des partenariats long terme avec forte conviction. C'est un sujet abordé au cas par cas, pas un modèle par défaut.</span>
+          <span data-translate="en">Occasionally, for long-term high-conviction partnerships. Discussed case-by-case, not a default model.</span>
+          <span data-translate="de">Vereinzelt, bei langfristigen Partnerschaften mit hoher Überzeugung. Immer individuell, nicht standardmässig.</span>
+        </div></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <button class="faq-q">
+          <span>
+            <span data-translate="fr">En quelle langue se déroulent les missions ?</span>
+            <span data-translate="en">What language are engagements in?</span>
+            <span data-translate="de">In welcher Sprache laufen die Mandate?</span>
+          </span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><div>
+          <span data-translate="fr">Français, anglais, allemand. Tous les livrables sont adaptés à la langue de vos équipes.</span>
+          <span data-translate="en">French, English, German. All deliverables are adapted to your teams' language.</span>
+          <span data-translate="de">Französisch, Englisch, Deutsch. Alle Ergebnisse werden an die Sprache Ihres Teams angepasst.</span>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact">
+  <div class="wrap">
+    <div class="final reveal">
+      <div class="eyebrow" style="justify-content:center;"><span data-translate="fr">Prochaine étape</span><span data-translate="en">Next step</span><span data-translate="de">Nächster Schritt</span></div>
+      <h2 style="margin-top:14px;">
+        <span data-translate="fr">Un call. 30 minutes. Zéro bullshit.</span>
+        <span data-translate="en">One call. 30 minutes. Zero bullshit.</span>
+        <span data-translate="de">Ein Call. 30 Minuten. Kein Bullshit.</span>
+      </h2>
+      <p class="lead" style="max-width:52ch;">
+        <span data-translate="fr">Vous me présentez votre boîte, je vous dis ce que je vois, et on décide ensemble si on avance. Pas de pitch, pas de slides — un vrai échange entre opérateurs.</span>
+        <span data-translate="en">You walk me through your business, I tell you what I see, we decide together if we move. No pitch, no slides — a real operator-to-operator talk.</span>
+        <span data-translate="de">Sie stellen mir Ihr Unternehmen vor, ich sage Ihnen, was ich sehe, wir entscheiden gemeinsam. Kein Pitch, keine Folien — Operator zu Operator.</span>
+      </p>
+      <div class="hero-ctas">
+        <a href="mailto:pascal@schwarz-signature.ch" class="btn btn-primary">
+          <span data-translate="fr">Réserver mon call</span>
+          <span data-translate="en">Book my call</span>
+          <span data-translate="de">Meinen Call buchen</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#services" class="btn btn-ghost">
+          <span data-translate="fr">Revoir les services</span>
+          <span data-translate="en">Review services</span>
+          <span data-translate="de">Leistungen nochmals ansehen</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="#top" class="logo" style="margin-bottom:16px;">
+          <span class="mark">SCHWARZ</span>
+          <span class="script">signature</span>
+        </a>
+        <p style="color:var(--muted);max-width:40ch;font-size:14px;margin-top:12px;">
+          <span data-translate="fr">Operator &amp; growth architect. Je transforme les PME en machines de croissance.</span>
+          <span data-translate="en">Operator &amp; growth architect. I turn SMBs into growth machines.</span>
+          <span data-translate="de">Operator &amp; Growth Architect. Ich mache aus KMU Wachstumsmaschinen.</span>
+        </p>
+      </div>
+      <div>
+        <h5><span data-translate="fr">Navigation</span><span data-translate="en">Navigation</span><span data-translate="de">Navigation</span></h5>
+        <ul>
+          <li><a href="#services"><span data-translate="fr">Services</span><span data-translate="en">Services</span><span data-translate="de">Leistungen</span></a></li>
+          <li><a href="#approach"><span data-translate="fr">Approche</span><span data-translate="en">Approach</span><span data-translate="de">Vorgehen</span></a></li>
+          <li><a href="#results"><span data-translate="fr">Résultats</span><span data-translate="en">Results</span><span data-translate="de">Ergebnisse</span></a></li>
+          <li><a href="#about"><span data-translate="fr">À propos</span><span data-translate="en">About</span><span data-translate="de">Über</span></a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:pascal@schwarz-signature.ch">pascal@schwarz-signature.ch</a></li>
+          <li><a href="#">LinkedIn →</a></li>
+          <li><a href="#">Instagram →</a></li>
+          <li style="color:var(--muted);">Suisse · CH</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Schwarz Signature Sàrl. <span data-translate="fr">Tous droits réservés.</span><span data-translate="en">All rights reserved.</span><span data-translate="de">Alle Rechte vorbehalten.</span></div>
+      <div>CH · Crafted with intent.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // LANG SWITCHER
+  const body = document.body;
+  document.querySelectorAll('[data-setlang]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.setlang;
+      body.dataset.lang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-setlang]').forEach(b => b.classList.toggle('active', b.dataset.setlang === lang));
+    });
+  });
+
+  // SMOOTH SCROLL + close mobile menu
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const t = document.querySelector(id);
+        if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); mmenu.classList.remove('open'); }
+      }
+    });
+  });
+
+  // MOBILE MENU
+  const burger = document.getElementById('burger');
+  const mmenu = document.getElementById('mmenu');
+  burger.addEventListener('click', () => mmenu.classList.toggle('open'));
+
+  // REVEAL ON SCROLL
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // COUNTERS
+  const counters = document.querySelectorAll('[data-counter]');
+  const counterIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const end = +el.dataset.counter;
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
+      const dur = 1600;
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = Math.floor(end * eased);
+        el.textContent = prefix + val + (p === 1 ? suffix : '');
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = prefix + end + suffix;
+      };
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    });
+  }, {threshold:.4});
+  counters.forEach(c => counterIO.observe(c));
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+
+  // CURSOR SPOTLIGHT
+  const spot = document.getElementById('spotlight');
+  window.addEventListener('mousemove', (e) => {
+    spot.style.left = e.clientX + 'px';
+    spot.style.top = e.clientY + 'px';
+  });
+</script>
+
+</body>
+</html>
