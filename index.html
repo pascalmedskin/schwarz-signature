@@ -153,15 +153,17 @@
   .logo .script{
     font-family:var(--script);
     font-weight:400;
-    font-size:56px;
+    font-size:36px;
     color:var(--accent);
-    margin-top:-42px;
-    margin-right:-2px;
+    margin-top:-12px;
+    margin-right:-8px;
     line-height:1;
     position:relative;
     z-index:1;
     opacity:.9;
   }
+  .foot-top .logo .mark{font-size:18px;}
+  .foot-top .logo .script{font-size:44px;margin-top:-15px;margin-right:-10px;}
   .nav-links{display:flex;gap:28px;align-items:center;}
   .nav-links a{font-size:14px;color:var(--muted);transition:color .2s ease;font-weight:500;}
   .nav-links a:hover{color:var(--text);}
@@ -195,9 +197,9 @@
   .hero-copy{position:relative;z-index:4;}
   .hero-face-fx{
     position:absolute;
+    left:calc(62.5% - 80px);
     right:0;
     top:-160px;
-    width:min(55vw,820px);
     height:min(calc(88vh + 160px),1140px);
     pointer-events:none;
     z-index:1;
@@ -210,7 +212,7 @@
   }
   .hero-face-fx .img{
     filter:contrast(1.1) saturate(1.04) brightness(.9);
-    mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.32) 30%, rgba(0,0,0,.82) 44%, #000 58%, #000 100%);
+    mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.35) 10%, rgba(0,0,0,.85) 22%, #000 38%, #000 100%);
   }
   .hero-face-fx::before{
     content:"";
@@ -634,7 +636,7 @@
     .wrap{padding:0 16px;}
     .nav-inner{padding:10px 14px;gap:8px;}
     .logo .mark{font-size:14px;letter-spacing:.24em;}
-    .logo .script{font-size:22px;}
+    .logo .script{font-size:22px;margin-top:-8px;margin-right:-6px;}
 
     h1{font-size:clamp(30px,9vw,44px);}
     h2{font-size:clamp(24px,7vw,34px);}
@@ -664,6 +666,8 @@
     /* Footer tighter on small mobile */
     footer{padding:40px 0 20px;margin-top:32px;}
     .foot-top .logo{margin-bottom:12px;}
+    .foot-top .logo .mark{font-size:14px;}
+    .foot-top .logo .script{font-size:22px;margin-top:-8px;margin-right:-6px;}
     footer h5{margin-bottom:12px;}
     footer ul{gap:8px;}
     .foot-bottom{flex-direction:column;align-items:flex-start;gap:8px;padding-top:18px;}
@@ -690,7 +694,6 @@
   @media (min-width: 1280px){
     .hero-face-fx{
       right:calc((1240px - 100vw) / 2 - 24px);
-      width:min(58vw,900px);
     }
   }
 
