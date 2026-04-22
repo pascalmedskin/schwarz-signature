@@ -66,6 +66,12 @@
     background-image:var(--grad-1);
     background-attachment:fixed;
   }
+  /* Prevent grid/flex children from forcing horizontal overflow */
+  .hero-inner > *, .sec-head > *, .about > *, .foot-top > * {min-width:0;}
+  /* Allow long strings/URLs/compounds to wrap on small screens */
+  h1,h2,h3,h4,p,a,li,small,span{overflow-wrap:anywhere;word-break:normal;}
+  p,.lead{hyphens:auto;}
+  img,svg,video,canvas{max-width:100%;height:auto;}
   /* subtle grid background */
   body::before{
     content:"";
@@ -480,6 +486,9 @@
     .hero-badge{padding:7px 12px;font-size:10px;letter-spacing:.14em;}
     .hero-ctas{gap:10px;}
     .btn{padding:13px 18px;font-size:14px;}
+    /* On mobile, allow CTA labels to wrap instead of overflowing */
+    .btn{white-space:normal;}
+    .btn .arrow{flex:0 0 auto;}
     .hero-stats{grid-template-columns:1fr 1fr;border-radius:14px;margin-top:36px;}
     .hero-stats .stat{padding:18px 16px;}
     .stat .v{font-size:clamp(22px,5vw,28px);}
@@ -560,6 +569,8 @@
     .hero-badge{max-width:100%;white-space:normal;text-align:left;line-height:1.4;padding:8px 12px;}
     .hero-ctas{flex-direction:column;align-items:stretch;}
     .hero-ctas .btn{justify-content:center;}
+    /* Prevent any CTA/content row from creating a wide minimum */
+    .hero-ctas, .nav-right, .lang{max-width:100%;}
     .hero-stats{grid-template-columns:1fr;}
     .hero-stats .stat{padding:16px;}
 
@@ -1268,14 +1279,30 @@
 <script>
   // LANG SWITCHER
   const body = document.body;
-  document.querySelectorAll('[data-setlang]').forEach(btn => {
+  const langButtons = document.querySelectorAll('[data-setlang]');
+  const translatableNodes = document.querySelectorAll('[data-translate]');
+
+  function applyLanguage(lang){
+    body.dataset.lang = lang;
+    document.documentElement.lang = lang;
+
+    // Hard-toggle visibility to guarantee only one language at a time.
+    translatableNodes.forEach(node => {
+      const isActive = node.dataset.translate === lang;
+      node.style.display = isActive ? '' : 'none';
+      node.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+    });
+
+    langButtons.forEach(b => b.classList.toggle('active', b.dataset.setlang === lang));
+  }
+
+  langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const lang = btn.dataset.setlang;
-      body.dataset.lang = lang;
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-setlang]').forEach(b => b.classList.toggle('active', b.dataset.setlang === lang));
+      applyLanguage(btn.dataset.setlang);
     });
   });
+
+  applyLanguage(body.dataset.lang || 'fr');
 
   // SMOOTH SCROLL + close mobile menu
   document.querySelectorAll('a[href^="#"]').forEach(a => {
